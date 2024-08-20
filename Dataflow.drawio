@@ -1,0 +1,82 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.5 Chrome/126.0.6478.183 Electron/31.3.0 Safari/537.36" version="24.7.5">
+  <diagram id="YQMBTw7fz82kIZ-HROJp" name="Page-1">
+    <mxGraphModel dx="989" dy="577" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="diKIgLYFMIX-dpYucBhf-1" value="Request" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="305" y="60" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="diKIgLYFMIX-dpYucBhf-3" value="Controller" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="diKIgLYFMIX-dpYucBhf-4" value="UseCase" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="diKIgLYFMIX-dpYucBhf-5" value="Repository" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="708" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="diKIgLYFMIX-dpYucBhf-6" value="sends request " style="text;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="205" y="75" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="diKIgLYFMIX-dpYucBhf-7" value="receives the request &#xa;and passes it to the useCase" style="text;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="130" y="270" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="diKIgLYFMIX-dpYucBhf-8" value="handles business logic&#xa;and validations then &#xa;calls the repository&#xa;to save the employee" style="text;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="170" y="480" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="diKIgLYFMIX-dpYucBhf-9" value="interacts with the database&#xa;to insert the new employee" style="text;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="155" y="718" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="diKIgLYFMIX-dpYucBhf-19" value="receives the response and&#xa;send it back to controller" style="text;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="440" y="490" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="diKIgLYFMIX-dpYucBhf-20" value="sends the response back after&#xa;save successfully" style="text;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="440" y="718" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="diKIgLYFMIX-dpYucBhf-23" value="receives the response&#xa;and passes it to the client" style="text;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="440" y="270" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="diKIgLYFMIX-dpYucBhf-24" value="gets response" style="text;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="440" y="75" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="diKIgLYFMIX-dpYucBhf-25" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="330" y="140" as="sourcePoint" />
+            <mxPoint x="330" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="diKIgLYFMIX-dpYucBhf-27" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="330" y="350" as="sourcePoint" />
+            <mxPoint x="330" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="diKIgLYFMIX-dpYucBhf-28" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="330" y="570" as="sourcePoint" />
+            <mxPoint x="330" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="diKIgLYFMIX-dpYucBhf-29" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="680" as="sourcePoint" />
+            <mxPoint x="400" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="diKIgLYFMIX-dpYucBhf-30" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="460" as="sourcePoint" />
+            <mxPoint x="400" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="diKIgLYFMIX-dpYucBhf-31" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="250" as="sourcePoint" />
+            <mxPoint x="400" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
