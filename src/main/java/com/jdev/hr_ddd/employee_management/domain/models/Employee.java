@@ -1,4 +1,5 @@
 package com.jdev.hr_ddd.employee_management.domain.models;
+import com.jdev.hr_ddd.employee_management.enums.Enums;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,21 +28,23 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
     private final String fullName;
-    private final String nationality;
+    private final Enums.NationalityType nationality;
+    @Column(unique = true)
     private final String NRC;
+    @Column(unique = true)
     private final String email;
+    @Column(unique = true)
     private final String phoneNumber;
     private final String emergencyContactNumber;
     private final String currentAddress;
     private final String permanentAddress;
-    private final int DOB;
-    private final boolean employmentStatus;
+    private final long DOB;
+    private final Enums.EmploymentStatus employmentStatus;
 //
 //    @ManyToMany
 //    @JoinTable(name = "tb_employee_position", joinColumns = @JoinColumn(name = "employee_id"), inverseJoinColumns = @JoinColumn(name = "position_id"))
-//    private Set<JobPosition> assignedPosition = new HashSet<>();
+//    private Set<JobPosition> assignedPosition = new HashSet<>(); // set do not allow duplicate
 //
 //    @ManyToMany
 //    @JoinTable(name = "tb_employee_department", joinColumns = @JoinColumn(name = "employee_id"), inverseJoinColumns = @JoinColumn(name = "department_id"))

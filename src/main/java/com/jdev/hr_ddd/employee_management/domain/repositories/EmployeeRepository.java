@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Set;
 
+// working with database
 // for custom functionalities beside CRUD methods which can get by extending Jpa
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
