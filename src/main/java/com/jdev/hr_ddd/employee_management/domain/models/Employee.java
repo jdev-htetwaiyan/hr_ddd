@@ -1,7 +1,11 @@
 package com.jdev.hr_ddd.employee_management.domain.models;
+import com.jdev.hr_ddd.employee_management.domain.valueObjects.NrcNumber;
 import com.jdev.hr_ddd.employee_management.enums.Enums;
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -29,9 +33,11 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private final String fullName;
+    @Enumerated(EnumType.STRING)
     private final Enums.NationalityType nationality;
+    @Embedded
     @Column(unique = true)
-    private final String NRC;
+    private final NrcNumber nrcNumber;
     @Column(unique = true)
     private final String email;
     @Column(unique = true)
@@ -39,7 +45,8 @@ public class Employee {
     private final String emergencyContactNumber;
     private final String currentAddress;
     private final String permanentAddress;
-    private final long DOB;
+    private final long DOB; // Epoch time stamp
+    @Enumerated(EnumType.STRING)
     private final Enums.EmploymentStatus employmentStatus;
 //
 //    @ManyToMany

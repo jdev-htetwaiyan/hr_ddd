@@ -1,6 +1,7 @@
 package com.jdev.hr_ddd.employee_management.webControllers;
 
 import com.jdev.hr_ddd.employee_management.domain.models.Employee;
+import com.jdev.hr_ddd.employee_management.domain.valueObjects.NrcNumber;
 import com.jdev.hr_ddd.employee_management.enums.Enums;
 import com.jdev.hr_ddd.employee_management.useCases.CreateEmployeeUseCase;
 import jakarta.validation.Valid;
@@ -41,8 +42,8 @@ public class CreateEmployeeController {
         String fullName,
         @NotNull
         Enums.NationalityType nationality,
-        @NotBlank @Size(max = 25)
-        String NRC,
+        @Valid
+        NrcNumber nrcNumber,
         @NotBlank @Email
         String email,
         @NotBlank

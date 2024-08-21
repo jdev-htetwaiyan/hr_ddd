@@ -2,6 +2,7 @@ package com.jdev.hr_ddd.employee_management.useCases;
 
 import com.jdev.hr_ddd.employee_management.domain.models.Employee;
 import com.jdev.hr_ddd.employee_management.domain.repositories.EmployeeRepository;
+import com.jdev.hr_ddd.employee_management.domain.valueObjects.NrcNumber;
 import com.jdev.hr_ddd.employee_management.webControllers.CreateEmployeeController.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,7 @@ public class CreateEmployeeUseCase {
         Employee employee = new Employee(
             request.fullName(),
             request.nationality(),
-            request.NRC(),
+            request.nrcNumber(),
             request.email(),
             request.phoneNumber(),
             request.emergencyContactNumber(),
