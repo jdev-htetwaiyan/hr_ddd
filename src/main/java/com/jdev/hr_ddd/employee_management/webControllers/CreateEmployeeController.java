@@ -3,7 +3,6 @@ package com.jdev.hr_ddd.employee_management.webControllers;
 import com.jdev.hr_ddd.employee_management.domain.models.Employee;
 import com.jdev.hr_ddd.employee_management.enums.Enums;
 import com.jdev.hr_ddd.employee_management.useCases.CreateEmployeeUseCase;
-import jakarta.persistence.Column;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -11,10 +10,12 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("api/employee")
@@ -29,9 +30,10 @@ public class CreateEmployeeController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Response> saveEmployee(@Valid @RequestBody Request request) {
+    public ResponseEntity<Response> saveEmployee(@Valid @ModelAttribute Request request, @RequestPart("photoPath")
+                                                 MultipartFile photoPath) {
 
-        Employee savedEmployee = createEmployeeUseCase.createEmployee(request);
+        Employee savedEmployee = createEmployeeUseCase.createEmployee(request, photoPath);
 
         return ResponseEntity.ok(new Response(savedEmployee.getId()));
     }

@@ -25,6 +25,8 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(unique = true)
+    private String photoPath;
     private final String fullName;
     @Enumerated(EnumType.STRING)
     private final Enums.NationalityType nationality;

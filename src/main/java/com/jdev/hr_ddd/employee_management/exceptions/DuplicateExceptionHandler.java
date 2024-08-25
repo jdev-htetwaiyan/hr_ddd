@@ -13,15 +13,25 @@ import java.util.Map;
 public class DuplicateExceptionHandler {
 
     @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
-    public ResponseEntity<Map<String, Object>> execute(SQLIntegrityConstraintViolationException ex) {
+    public ResponseEntity<Map<String, Object>> handleSQLIntegrityConstraintViolation(SQLIntegrityConstraintViolationException ex) {
+        return buildResponseEntity(ex.getMessage());
+    }
+
+    @ExceptionHandler(IllegalStateException.class)
+    public ResponseEntity<Map<String, Object>> handleIllegalStateException(IllegalStateException ex) {
+        return buildResponseEntity(ex.getMessage());
+    }
+
+    private ResponseEntity<Map<String, Object>> buildResponseEntity(String message) {
         Map<String, Object> responseBody = new HashMap<>();
-        String message = truncateMessage(ex.getMessage());
+        String truncatedMessage = truncateMessage(message);
 
         responseBody.put("HttpStatusCode", HttpStatus.CONFLICT.value());
-        responseBody.put("message", message);
+        responseBody.put("message", truncatedMessage);
 
         return new ResponseEntity<>(responseBody, HttpStatus.CONFLICT);
     }
+
 
     private String truncateMessage(String message) {
         int index = message.indexOf("for");
