@@ -1,25 +1,18 @@
 package com.jdev.hr_ddd.employee_management.domain.models;
-import com.jdev.hr_ddd.employee_management.domain.valueObjects.NrcNumber;
+
 import com.jdev.hr_ddd.employee_management.enums.Enums;
 import jakarta.persistence.Column;
-import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Getter
@@ -35,9 +28,8 @@ public class Employee {
     private final String fullName;
     @Enumerated(EnumType.STRING)
     private final Enums.NationalityType nationality;
-    @Embedded
     @Column(unique = true)
-    private final NrcNumber nrcNumber;
+    private final String idNumber;
     @Column(unique = true)
     private final String email;
     @Column(unique = true)

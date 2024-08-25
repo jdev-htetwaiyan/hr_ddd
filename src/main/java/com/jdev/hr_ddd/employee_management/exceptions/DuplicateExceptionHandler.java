@@ -24,7 +24,7 @@ public class DuplicateExceptionHandler {
     }
 
     private String truncateMessage(String message) {
-        int index = message.indexOf(" for ");
+        int index = message.indexOf("for");
         if (index != -1) {
             return message.substring(0, index);
         }
