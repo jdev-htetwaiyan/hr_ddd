@@ -1,8 +1,8 @@
-package com.jdev.hr_ddd.employee_management.useCases;
+package com.jdev.hr_ddd.employee_management.useCases.employee;
 
 import com.jdev.hr_ddd.employee_management.domain.models.Employee;
 import com.jdev.hr_ddd.employee_management.domain.repositories.EmployeeRepository;
-import com.jdev.hr_ddd.employee_management.webControllers.CreateEmployeeController.Request;
+import com.jdev.hr_ddd.employee_management.webControllers.employee.CreateEmployeeController.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;

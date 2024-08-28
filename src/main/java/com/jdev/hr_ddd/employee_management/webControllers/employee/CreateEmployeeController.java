@@ -1,8 +1,8 @@
-package com.jdev.hr_ddd.employee_management.webControllers;
+package com.jdev.hr_ddd.employee_management.webControllers.employee;
 
 import com.jdev.hr_ddd.employee_management.domain.models.Employee;
 import com.jdev.hr_ddd.employee_management.enums.Enums;
-import com.jdev.hr_ddd.employee_management.useCases.CreateEmployeeUseCase;
+import com.jdev.hr_ddd.employee_management.useCases.employee.CreateEmployeeUseCase;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

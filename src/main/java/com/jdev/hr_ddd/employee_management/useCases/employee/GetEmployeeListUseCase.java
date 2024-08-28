@@ -1,4 +1,4 @@
-package com.jdev.hr_ddd.employee_management.useCases;
+package com.jdev.hr_ddd.employee_management.useCases.employee;
 
 import com.jdev.hr_ddd.employee_management.domain.models.Employee;
 import com.jdev.hr_ddd.employee_management.domain.repositories.EmployeeRepository;

@@ -1,7 +1,7 @@
-package com.jdev.hr_ddd.employee_management.webControllers;
+package com.jdev.hr_ddd.employee_management.webControllers.employee;
 
 import com.jdev.hr_ddd.employee_management.domain.models.Employee;
-import com.jdev.hr_ddd.employee_management.useCases.GetEmployeeListUseCase;
+import com.jdev.hr_ddd.employee_management.useCases.employee.GetEmployeeListUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
