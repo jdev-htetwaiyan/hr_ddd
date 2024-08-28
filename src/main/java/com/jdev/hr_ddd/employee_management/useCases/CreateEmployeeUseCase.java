@@ -25,7 +25,7 @@ public class CreateEmployeeUseCase {
     }
 
 //    Too many fields. Will use mapper here later
-    public Employee createEmployee(Request request, MultipartFile photoPath) {
+    public Employee execute(Request request, MultipartFile photoPath) {
 
         Employee employee = new Employee(
             request.fullName(),

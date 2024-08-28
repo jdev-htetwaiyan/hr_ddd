@@ -31,7 +31,7 @@ public class CreateEmployeeController {
     public ResponseEntity<Response> saveEmployee(@Valid @ModelAttribute Request request, @RequestPart("photoPath")
                                                  MultipartFile photoPath) {
 
-        Employee savedEmployee = createEmployeeUseCase.createEmployee(request, photoPath);
+        Employee savedEmployee = createEmployeeUseCase.execute(request, photoPath);
 
         return ResponseEntity.ok(new Response(savedEmployee.getId()));
     }
