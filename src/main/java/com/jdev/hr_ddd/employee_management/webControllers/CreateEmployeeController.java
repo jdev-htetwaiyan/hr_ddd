@@ -12,13 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 @RestController
-@RequestMapping("api/employee")
 public class CreateEmployeeController {
 
     private final CreateEmployeeUseCase createEmployeeUseCase;
@@ -29,7 +27,7 @@ public class CreateEmployeeController {
         this.createEmployeeUseCase = createEmployeeUseCase;
     }
 
-    @PostMapping("/create")
+    @PostMapping("/api/employee/create")
     public ResponseEntity<Response> saveEmployee(@Valid @ModelAttribute Request request, @RequestPart("photoPath")
                                                  MultipartFile photoPath) {
 
@@ -38,7 +36,6 @@ public class CreateEmployeeController {
         return ResponseEntity.ok(new Response(savedEmployee.getId()));
     }
 
-    // Record for request
     public record Request(
         @NotBlank(message = "Field cannot be empty and must be between 3 to 30 characters") @Size(min = 3, max = 30)
         String fullName,
@@ -60,7 +57,6 @@ public class CreateEmployeeController {
         Enums.EmploymentStatus employmentStatus
     ) {}
 
-    // Record for response
     public record Response(long id) {}
 
 }
