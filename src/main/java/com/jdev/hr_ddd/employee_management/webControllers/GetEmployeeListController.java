@@ -24,14 +24,13 @@ public class GetEmployeeListController {
     public ResponseEntity<Response> GetList(@RequestBody Request request) {
         List<Employee> list = getEmployeeListUseCase.execute();
 
-        int page = request.page();
-        int size = request.size();
         int totalCount = list.size();
+        int page = request.page() != 0 ? request.page() : 1;
+        int size = request.size() != 0 ? request.size() : 10;
+        String[] filteredBy = request.filteredBy() != null ? request.filteredBy() : new String[]{};
 
         int startingIndex = (page - 1) * size;
         int endingIndex = Math.min(startingIndex + size, totalCount); // min value to prevent out of bound error
-
-        String[] filteredBy = request.filteredBy() != null ? request.filteredBy() : new String[]{};
 
         List<Employee> paginatedList = list.subList(startingIndex, endingIndex);
 
@@ -43,13 +42,7 @@ public class GetEmployeeListController {
         int size,
         String[] filteredBy
 
-    ) {
-        // overload constructor to define the default values
-        // instead of using @RequestParam.
-        public Request() {
-            this(1, 10, new String[]{});
-        }
-    }
+    ) {}
 
     public record Response(
         int page,
